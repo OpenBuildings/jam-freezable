@@ -21,10 +21,9 @@ Kohana::modules(array(
 Kohana::$config
 	->load('database')
 		->set('default', array(
-			'type'       => 'MySQL',
+			'type'       => 'PDO',
 			'connection' => array(
-				'hostname'   => 'localhost',
-				'database'   => 'test-jam-freezable',
+				'dsn'        => 'mysql:dbname=test-jam-freezable;host=127.0.0.1',
 				'username'   => 'root',
 				'password'   => '',
 				'persistent' => TRUE,
