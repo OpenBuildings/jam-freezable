@@ -10,18 +10,18 @@ class Model_Test_Purchase extends Jam_Model {
 
 	protected $_monetary;
 
-	/**
-	 * @codeCoverageIgnore
-	 */
 	public static function initialize(Jam_Meta $meta)
 	{
 		$meta
 			->behaviors(array(
-				'freezable' => Jam::behavior('freezable', array('fields' => 'monetary', 'associations' => 'test_store_purchases')),
+				'freezable' => Jam::behavior('freezable', array(
+					'fields'       => 'monetary',
+					'associations' => 'test_store_purchases'
+				)),
 			))
 			->associations(array(
 				'test_store_purchases' => Jam::association('hasmany', array(
-					'inverse_of' => 'test_purchase',
+					'inverse_of'    => 'test_purchase',
 					'foreign_model' => 'test_store_purchase',
 				)),
 			))
@@ -32,8 +32,8 @@ class Model_Test_Purchase extends Jam_Model {
 	}
 
 	/**
-	 * Freezable field. Return Monetary::instance() if not frozen
-	 * @return OpenBuildings\Monetary\Monetary
+	 * Freezable field. Return stdClass if not frozen
+	 * @return stdClass
 	 */
 	public function monetary()
 	{

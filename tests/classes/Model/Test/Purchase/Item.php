@@ -8,9 +8,6 @@
  */
 class Model_Test_Purchase_Item extends Jam_Model {
 
-	/**
-	 * @codeCoverageIgnore
-	 */
 	public static function initialize(Jam_Meta $meta)
 	{
 		$meta
@@ -32,8 +29,10 @@ class Model_Test_Purchase_Item extends Jam_Model {
 	}
 
 	/**
-	 * Return the monetary for this purchase item, get it from parent store_purchase
-	 * @return OpenBuildings\Monetary\Montary
+	 * Return the monetary for this purchase item.
+	 * Get it from parent store_purchase.
+	 *
+	 * @return stdClass
 	 */
 	public function monetary()
 	{
@@ -41,7 +40,9 @@ class Model_Test_Purchase_Item extends Jam_Model {
 	}
 
 	/**
-	 * Freezable implementation, return compute_price or price field
+	 * Freezable implementation, return random price (dynamic value)
+	 * or price field (frozen) if available
+	 *
 	 * @return Jam_Price
 	 */
 	public function price()

@@ -8,9 +8,6 @@
  */
 class Model_Test_Store_Purchase extends Jam_Model {
 
-	/**
-	 * @codeCoverageIgnore
-	 */
 	public static function initialize(Jam_Meta $meta)
 	{
 		$meta
