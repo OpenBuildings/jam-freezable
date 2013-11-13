@@ -11,9 +11,9 @@
 class Kohana_Jam_Behavior_Freezable extends Jam_Behavior {
 
 	public $_associations;
-	
+
 	public $_fields;
-	
+
 	public $_parent;
 
 	/**
@@ -98,7 +98,7 @@ class Kohana_Jam_Behavior_Freezable extends Jam_Behavior {
 			elseif ($model->{$name})
 			{
 				$model->{$name}->{$method_name}();
-				
+
 				$model->{$name} = $model->{$name};
 			}
 		}

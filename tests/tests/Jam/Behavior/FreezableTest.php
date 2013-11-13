@@ -153,7 +153,7 @@ class Jam_Behavior_FreezableTest extends PHPUnit_Framework_TestCase {
 		$purchase->test_store_purchases[0]->test_items[0]->price = 122;
 
 		$this->assertFalse($purchase->check());
-		
+
 		$purchase->unfreeze();
 
 		$this->assertTrue($purchase->check());
@@ -249,7 +249,7 @@ class Jam_Behavior_FreezableTest extends PHPUnit_Framework_TestCase {
 		$this->assertTrue($purchase
 			->test_store_purchases[0]
 			->test_items[0]->is_just_frozen());
-	
+
 		$purchase->save();
 
 		$this->assertFalse($purchase->is_just_frozen());
