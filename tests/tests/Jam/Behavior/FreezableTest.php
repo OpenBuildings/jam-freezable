@@ -7,8 +7,10 @@
  * @group jam.behavior
  * @group jam.behavior.freezable
  * @package openbuildings/jam-freezable
- * @author Ivan Kerin
+ * @author Ivan Kerin <ikerin@gmail.com>
+ * @author Haralan Dobrev <hkdobrev@gmail.com>
  * @copyright 2013 OpenBuildings, Inc.
+ * @license http://spdx.org/licenses/BSD-3-Clause
  */
 class Jam_Behavior_FreezableTest extends PHPUnit_Framework_TestCase {
 

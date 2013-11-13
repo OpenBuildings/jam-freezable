@@ -1,14 +1,12 @@
 <?php defined('SYSPATH') OR die('No direct script access.');
 
 /**
- * @package    Openbuildings\Purchases
+ * @package    Openbuildings/jam-freezable
  * @author     Ivan Kerin <ikerin@gmail.com>
- * @copyright  (c) 2013 OpenBuildings Ltd.
+ * @copyright  2013 OpenBuildings, Inc.
  * @license    http://spdx.org/licenses/BSD-3-Clause
  */
 class Model_Test_Purchase extends Jam_Model {
-
-	protected $_monetary;
 
 	public static function initialize(Jam_Meta $meta)
 	{

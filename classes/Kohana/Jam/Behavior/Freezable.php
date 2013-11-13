@@ -3,7 +3,7 @@
 /**
  * Jam behavior for freezing computed values into the database
  *
- * @package    openbuildings\jam-freezable
+ * @package    openbuildings/jam-freezable
  * @author     Ivan Kerin <ivank@gmail.com>
  * @copyright  2013 OpenBuildings, Inc.
  * @license    http://spdx.org/licenses/BSD-3-Clause
