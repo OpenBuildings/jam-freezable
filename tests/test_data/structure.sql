@@ -1,7 +1,6 @@
 DROP TABLE IF EXISTS `test_purchases`;
 CREATE TABLE `test_purchases` (
   `id` INT(11) UNSIGNED NOT NULL AUTO_INCREMENT,
-  `currency` VARCHAR(3) NOT NULL,
   `monetary` TEXT,
   `is_frozen` INT(1) UNSIGNED NOT NULL DEFAULT 0,
   PRIMARY KEY  (`id`)
@@ -25,10 +24,10 @@ CREATE TABLE `test_purchase_items` (
 # Dump of table purchases
 # ------------------------------------------------------------
 
-INSERT INTO `test_purchases` (`id`, `currency`, `monetary`, `is_frozen`)
+INSERT INTO `test_purchases` (`id`, `monetary`, `is_frozen`)
 VALUES
-  (1,'EUR','O:8:"stdClass":0:{}',1),
-  (2,'GBP','',0);
+  (1,'O:8:"stdClass":0:{}',1),
+  (2,'',0);
 
 # Dump of table store_purchases
 # ------------------------------------------------------------

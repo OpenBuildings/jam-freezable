@@ -1,4 +1,4 @@
-<?php
+<?php defined('SYSPATH') OR die('No direct script access.');
 
 /**
  * Unit tests for Jam_Behavior_Freezable
@@ -91,7 +91,6 @@ class Jam_Behavior_FreezableTest extends PHPUnit_Framework_TestCase {
 	/**
 	 * @covers Jam_Behavior_Freezable::model_after_check
 	 * @covers Jam_Behavior_Freezable::model_after_save
-	 * @covers Jam_Behavior_Freezable::model_call_is_just_frozen
 	 */
 	public function test_model_after_check()
 	{
