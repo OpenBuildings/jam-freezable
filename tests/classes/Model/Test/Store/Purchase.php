@@ -34,6 +34,6 @@ class Model_Test_Store_Purchase extends Jam_Model {
 
 	public function monetary()
 	{
-		return $this->get_insist('purchase')->monetary();
+		return $this->get_insist('test_purchase')->monetary();
 	}
 }
