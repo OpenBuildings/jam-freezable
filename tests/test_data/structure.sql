@@ -21,6 +21,13 @@ CREATE TABLE `test_purchase_items` (
   PRIMARY KEY  (`id`)
 ) ENGINE=INNODB  DEFAULT CHARSET=utf8;
 
+DROP TABLE IF EXISTS `test_payments`;
+CREATE TABLE `test_payments` (
+  `id` INT(11) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `test_purchase_id` INT(10) UNSIGNED NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=INNODB  DEFAULT CHARSET=utf8;
+
 # Dump of table purchases
 # ------------------------------------------------------------
 
@@ -45,3 +52,10 @@ VALUES
   (1,1,200.00),
   (2,1,200.00),
   (3,2,NULL);
+
+# Dump of table payments
+# ------------------------------------------------------------
+
+INSERT INTO `test_payments` (`id`, `test_purchase_id`)
+VALUES
+  (1,1);

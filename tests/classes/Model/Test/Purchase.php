@@ -14,7 +14,10 @@ class Model_Test_Purchase extends Jam_Model {
 			->behaviors(array(
 				'freezable' => Jam::behavior('freezable', array(
 					'fields'       => 'monetary',
-					'associations' => 'test_store_purchases'
+					'associations' => array(
+						'test_store_purchases',
+						'test_payment'
+					)
 				)),
 			))
 			->associations(array(
@@ -22,6 +25,7 @@ class Model_Test_Purchase extends Jam_Model {
 					'inverse_of'    => 'test_purchase',
 					'foreign_model' => 'test_store_purchase',
 				)),
+				'test_payment' => Jam::association('hasone')
 			))
 			->fields(array(
 				'id'              => Jam::field('primary'),

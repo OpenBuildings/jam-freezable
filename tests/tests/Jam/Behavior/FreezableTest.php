@@ -58,6 +58,18 @@ class Jam_Behavior_FreezableTest extends PHPUnit_Framework_TestCase {
 			$store_purchase2,
 		);
 
+		$payment = $this->getMock('Model_Test_Payment', array(
+			'test_method'
+		), array(
+			'test_payment'
+		));
+
+		$payment
+			->expects($this->once())
+			->method('test_method');
+
+		$purchase->test_payment = $payment;
+
 		$behaviors = $purchase->meta()->behaviors();
 
 		$behaviors['freezable']
