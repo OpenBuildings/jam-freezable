@@ -29,7 +29,9 @@ class Kohana_Jam_Behavior_Freezable extends Jam_Behavior {
 		if ( ! $this->_parent)
 		{
 			$meta->field('is_frozen', Jam::field('boolean'));
-			$meta->field('is_just_frozen', Jam::field('boolean', array('in_db' => FALSE)));
+			$meta->field('is_just_frozen', Jam::field('boolean', array(
+				'in_db' => FALSE
+			)));
 		}
 	}
 
@@ -186,7 +188,9 @@ class Kohana_Jam_Behavior_Freezable extends Jam_Behavior {
 	{
 		if ($this->_parent)
 		{
-			$data->return = $model->get_insist($this->_parent)->is_just_frozen();
+			$data->return = $model
+				->get_insist($this->_parent)
+				->is_just_frozen();
 		}
 		else
 		{
