@@ -1,0 +1,31 @@
+{
+	"name": "openbuildings/jam-freezable",
+	"description": "Freeze dynamically computed values in the database using Jam",
+	"type": "kohana-module",
+	"keywords": [
+		"jam",
+		"database",
+		"freezing"
+	],
+	"homepage": "https://github.com/OpenBuildings/jam-freezable",
+	"license": "BSD-3-Clause",
+	"authors": [
+		{
+			"name": "Ivan Kerin",
+			"email": "ivank@gmail.com",
+			"role": "Author"
+		}
+	],
+	"support": {
+		"issues": "https://github.com/OpenBuildings/jam-freezable/issues",
+		"source": "https://github.com/OpenBuildings/jam-freezable"
+	},
+	"require": {
+		"php": ">=5.4.0",
+		"composer/installers": "*",
+		"openbuildings/jam": "0.4.*"
+	},
+	"require-dev": {
+		"openbuildings/kohana-test-bootsrap": "0.1.*"
+	}
+}
