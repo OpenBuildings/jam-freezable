@@ -129,6 +129,48 @@ class Jam_Behavior_FreezableTest extends PHPUnit_Framework_TestCase {
 	}
 
 	/**
+	 * @covers Jam_Behavior_Freezable::model_call_freeze
+	 */
+	public function test_freeze_freezes_only_null_fields()
+	{
+		$purchase_item1 = $this->getMock('Model_Test_Purchase_Item', array(
+			'price'
+		), array(
+			'test_purchase_item'
+		));
+
+		$purchase_item1
+			->expects($this->once())
+			->method('price')
+			->will($this->returnValue(10.00));
+
+		$purchase_item2 = $this->getMock('Model_Test_Purchase_Item', array(
+			'price'
+		), array(
+			'test_purchase_item'
+		));
+
+		$purchase_item2
+			->expects($this->never())
+			->method('price')
+			->will($this->returnValue(10.00));
+
+		$purchase_item2->price = 7.00;
+
+		$store_purchase = Jam::build('test_store_purchase', array(
+			'test_items' => array(
+				$purchase_item1,
+				$purchase_item2,
+			)
+		));
+
+		$store_purchase->freeze();
+
+		$this->assertSame(10.00, $store_purchase->test_items[0]->price);
+		$this->assertSame(7.00, $store_purchase->test_items[1]->price);
+	}
+
+	/**
 	 * @covers Jam_Behavior_Freezable::model_after_check
 	 * @covers Jam_Behavior_Freezable::model_after_save
 	 */

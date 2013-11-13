@@ -117,7 +117,10 @@ class Kohana_Jam_Behavior_Freezable extends Jam_Behavior {
 
 		foreach ($this->_fields as $name)
 		{
-			$model->{$name} = $model->{$name}();
+			if ($model->{$name} === NULL)
+			{
+				$model->{$name} = $model->{$name}();
+			}
 		}
 
 		if ( ! $this->_parent)
