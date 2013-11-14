@@ -26,6 +26,80 @@ class Jam_Behavior_FreezableTest extends PHPUnit_Framework_TestCase {
 		parent::tearDown();
 	}
 
+	public function test_initialize()
+	{
+		$meta = Jam::meta('test');
+
+		$this->assertInstanceOf(
+			'Jam_Field_Boolean',
+			$meta->field('is_frozen')
+		);
+		$this->assertInstanceOf(
+			'Jam_Field_Boolean',
+			$meta->field('is_just_frozen')
+		);
+
+		$behaviors = $meta->behaviors();
+		$freezable = $behaviors['freezable'];
+
+		$this->assertSame(array('child'), $freezable->_associations);
+		$this->assertSame(array(), $freezable->_fields);
+		$this->assertNull($freezable->_parent);
+		$this->assertFalse($freezable->_skippable);
+		$this->assertSame(array(), $freezable->_skippable_field_options);
+	}
+
+	public function test_initialize_with_parent()
+	{
+		$meta = Jam::meta('test_child');
+
+		$this->assertNull($meta->field('is_frozen'));
+		$this->assertNull($meta->field('is_just_frozen'));
+
+		$behaviors = $meta->behaviors();
+		$freezable = $behaviors['freezable'];
+
+		$this->assertSame(array(), $freezable->_associations);
+		$this->assertSame(array('value'), $freezable->_fields);
+		$this->assertSame('test', $freezable->_parent);
+		$this->assertFalse($freezable->_skippable);
+		$this->assertSame(array(), $freezable->_skippable_field_options);
+	}
+
+	public function test_initialize_skippable()
+	{
+		$meta = Jam::meta('test_purchase_item');
+
+		$this->assertInstanceOf(
+			'Jam_Field_Boolean',
+			$meta->field(Jam_Behavior_Freezable::DEFAULT_SKIPPABLE_FIELD)
+		);
+
+		$behaviors = $meta->behaviors();
+		$freezable = $behaviors['freezable'];
+		$this->assertSame(
+			Jam_Behavior_Freezable::DEFAULT_SKIPPABLE_FIELD,
+			$freezable->_skippable
+		);
+		$this->assertSame(array(), $freezable->_skippable_field_options);
+
+		$meta = Jam::meta('test_skippable');
+		$this->assertInstanceOf(
+			'Jam_Field_Boolean',
+			$meta->field('is_meldable')
+		);
+
+		$this->assertTrue($meta->field('is_meldable')->default);
+
+		$behaviors = $meta->behaviors();
+		$freezable = $behaviors['freezable'];
+
+		$this->assertSame('is_meldable', $freezable->_skippable);
+		$this->assertSame(array(
+			'default' => TRUE
+		), $freezable->_skippable_field_options);
+	}
+
 	/**
 	 * @covers Jam_Behavior_Freezable::call_associations_method
 	 */

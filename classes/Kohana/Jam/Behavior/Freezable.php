@@ -18,13 +18,10 @@ class Kohana_Jam_Behavior_Freezable extends Jam_Behavior {
 
 	public $_parent;
 
-	public $_skippable;
+	public $_skippable = FALSE;
 
 	public $_skippable_field_options = array();
 
-	/**
-	 * @codeCoverageIgnore
-	 */
 	public function initialize(Jam_Meta $meta, $name)
 	{
 		parent::initialize($meta, $name);
