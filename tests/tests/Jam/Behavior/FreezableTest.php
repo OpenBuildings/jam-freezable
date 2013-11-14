@@ -302,4 +302,27 @@ class Jam_Behavior_FreezableTest extends PHPUnit_Framework_TestCase {
 			->test_store_purchases[0]
 			->test_items[0]->is_just_frozen());
 	}
+
+	public function test_skippable_field()
+	{
+		$store_purchase = Jam::find('test_store_purchase', 3);
+
+		$store_purchase->freeze();
+		$this->assertNull($store_purchase->test_items[0]->price);
+		$this->assertNotNull($store_purchase->test_items[1]->price);
+
+		$store_purchase->test_items[0]->is_not_freezable = FALSE;
+
+		$store_purchase->freeze();
+		$this->assertNotNull($store_purchase->test_items[0]->price);
+		$this->assertNotNull($store_purchase->test_items[1]->price);
+
+		$store_purchase->unfreeze();
+		$this->assertNull($store_purchase->test_items[0]->price);
+		$this->assertNull($store_purchase->test_items[1]->price);
+
+		$store_purchase->freeze();
+		$this->assertNotNull($store_purchase->test_items[0]->price);
+		$this->assertNotNull($store_purchase->test_items[1]->price);
+	}
 }

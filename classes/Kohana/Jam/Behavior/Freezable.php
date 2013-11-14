@@ -10,11 +10,17 @@
  */
 class Kohana_Jam_Behavior_Freezable extends Jam_Behavior {
 
+	const DEFAULT_SKIPPABLE_FIELD = 'is_not_freezable';
+
 	public $_associations;
 
 	public $_fields;
 
 	public $_parent;
+
+	public $_skippable;
+
+	public $_skippable_field_options = array();
 
 	/**
 	 * @codeCoverageIgnore
@@ -32,6 +38,18 @@ class Kohana_Jam_Behavior_Freezable extends Jam_Behavior {
 			$meta->field('is_just_frozen', Jam::field('boolean', array(
 				'in_db' => FALSE
 			)));
+		}
+
+		if ($this->_skippable)
+		{
+			$this->_skippable = is_string($this->_skippable)
+				? $this->_skippable
+				: static::DEFAULT_SKIPPABLE_FIELD;
+
+			$meta->field(
+				$this->_skippable,
+				Jam::field('boolean', $this->_skippable_field_options)
+			);
 		}
 	}
 
@@ -117,6 +135,9 @@ class Kohana_Jam_Behavior_Freezable extends Jam_Behavior {
 
 		foreach ($this->_fields as $name)
 		{
+			if ($this->_skippable AND $model->{$this->_skippable})
+				continue;
+
 			if ($model->{$name} === NULL)
 			{
 				$model->{$name} = $model->{$name}();

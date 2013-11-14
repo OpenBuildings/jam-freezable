@@ -14,7 +14,8 @@ class Model_Test_Purchase_Item extends Jam_Model {
 			->behaviors(array(
 				'freezable' => Jam::behavior('freezable', array(
 					'fields' => 'price',
-					'parent' => 'test_store_purchase'
+					'parent' => 'test_store_purchase',
+					'skippable' => TRUE
 				)),
 			))
 			->associations(array(
