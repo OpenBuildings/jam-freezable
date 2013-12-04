@@ -3,20 +3,20 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "3aa1f4e82a588402deec7e80c019101a",
+    "hash": "707d2aa5a8697e81d6234a34778acf02",
     "packages": [
         {
             "name": "composer/installers",
-            "version": "v1.0.6",
+            "version": "v1.0.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/composer/installers.git",
-                "reference": "b3bd071ea114a57212c75aa6a2eef5cfe0cc798f"
+                "reference": "d792632d27e1980d921cbbba12eab7b888338d4c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/composer/installers/zipball/b3bd071ea114a57212c75aa6a2eef5cfe0cc798f",
-                "reference": "b3bd071ea114a57212c75aa6a2eef5cfe0cc798f",
+                "url": "https://api.github.com/repos/composer/installers/zipball/d792632d27e1980d921cbbba12eab7b888338d4c",
+                "reference": "d792632d27e1980d921cbbba12eab7b888338d4c",
                 "shasum": ""
             },
             "replace": {
@@ -46,7 +46,7 @@
                 {
                     "name": "Kyle Robinson Young",
                     "email": "kyle@dontkry.com",
-                    "homepage": "http://dontkry.com",
+                    "homepage": "https://github.com/shama",
                     "role": "Developer"
                 }
             ],
@@ -59,6 +59,7 @@
                 "agl",
                 "cakephp",
                 "codeigniter",
+                "concrete5",
                 "drupal",
                 "fuelphp",
                 "installer",
@@ -76,7 +77,7 @@
                 "wordpress",
                 "zend"
             ],
-            "time": "2013-08-20 04:37:09"
+            "time": "2013-10-24 16:13:49"
         },
         {
             "name": "openbuildings/flex-storage",
@@ -118,16 +119,16 @@
         },
         {
             "name": "openbuildings/jam",
-            "version": "0.4.34",
+            "version": "0.4.38",
             "source": {
                 "type": "git",
                 "url": "https://github.com/OpenBuildings/jam.git",
-                "reference": "65f9e686d51b2373d3d219477192f7c6dc39fefa"
+                "reference": "0df6c86938a11c6cdf872b95452ed6e826b63b25"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/OpenBuildings/jam/zipball/65f9e686d51b2373d3d219477192f7c6dc39fefa",
-                "reference": "65f9e686d51b2373d3d219477192f7c6dc39fefa",
+                "url": "https://api.github.com/repos/OpenBuildings/jam/zipball/0df6c86938a11c6cdf872b95452ed6e826b63b25",
+                "reference": "0df6c86938a11c6cdf872b95452ed6e826b63b25",
                 "shasum": ""
             },
             "require": {
@@ -167,7 +168,7 @@
                 "upload",
                 "validation"
             ],
-            "time": "2013-11-12 11:54:56"
+            "time": "2013-12-04 12:19:54"
         },
         {
             "name": "rackspace/php-opencloud",
@@ -261,7 +262,7 @@
 
     ],
     "platform": {
-        "php": ">=5.4.0"
+        "php": ">=5.3.0"
     },
     "platform-dev": [
 
