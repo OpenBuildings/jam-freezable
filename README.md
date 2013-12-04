@@ -1,7 +1,8 @@
 # Freezable Behavior
 
 [![Build Status](https://travis-ci.org/OpenBuildings/jam-freezable.png?branch=master)](https://travis-ci.org/OpenBuildings/jam-freezable)
-[![Coverage Status](https://coveralls.io/repos/OpenBuildings/jam-freezable/badge.png?branch=master)](https://coveralls.io/r/OpenBuildings/jam-freezable?branch=master)
+[![Scrutinizer Quality Score](https://scrutinizer-ci.com/g/OpenBuildings/jam-freezable/badges/quality-score.png?s=a18a7155ede3ea670988997c93bb50a6d8b99316)](https://scrutinizer-ci.com/g/OpenBuildings/jam-freezable/)
+[![Code Coverage](https://scrutinizer-ci.com/g/OpenBuildings/jam-freezable/badges/coverage.png?s=cbfda5344dfb62ae6c67098b31c277b45af1c501)](https://scrutinizer-ci.com/g/OpenBuildings/jam-freezable/)
 [![Latest Stable Version](https://poser.pugx.org/openbuildings/jam-freezable/v/stable.png)](https://packagist.org/packages/openbuildings/jam-freezable)
 
 **Freezable** is a [Jam ORM](https://github.com/OpenBuildings/jam) behavior for freezing dynamically computed values in the database.
