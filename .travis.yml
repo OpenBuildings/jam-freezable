@@ -6,12 +6,13 @@ php:
   - 5.5
 
 notifications:
+  email: false
   slack:
     secure: FUSm/TBZov+t9bgfh0if3f1Qez8n/GUPtaBAO/dA7Y+725+KODs6jH5lYC93QiZxiPJCiXaubDbPlOVfYnFzkyJTw9njKudgf2C/PdXHnv8GWaLU4vx43jPW1TIAR6U1caBIB/sdhRCFUdDFlovPYQWnn8zWb/Rj1jNURJ/gvus=
 
 install:
   - composer selfupdate
-  - composer install
+  - composer install --no-interaction
 
 before_script:
   - mkdir -p build/logs
