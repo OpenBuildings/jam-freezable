@@ -6,20 +6,20 @@ php:
   - 5.5
 
 notifications:
-  campfire:
-    rooms:
-      secure: gZRlrd8Jefr4xYmlWdLJLkw213V4dANtmFHyoCdujU8o2N4EjoJlw7xBe1GoEjJkO85VJLGXw5LF1xt7NT7BuZFW17hsgwO94hfPKuadZk230csV9BSJlJWZQl9hMA7107K/Zdw6JWUtIGMQmAEo5t2s2CJp6+qLWaFrnMZjA5g=
-
-script:
-  - phpunit --coverage-clover build/logs/clover.xml
+  slack:
+    secure: FUSm/TBZov+t9bgfh0if3f1Qez8n/GUPtaBAO/dA7Y+725+KODs6jH5lYC93QiZxiPJCiXaubDbPlOVfYnFzkyJTw9njKudgf2C/PdXHnv8GWaLU4vx43jPW1TIAR6U1caBIB/sdhRCFUdDFlovPYQWnn8zWb/Rj1jNURJ/gvus=
 
 install:
+  - composer selfupdate
   - composer install
 
 before_script:
   - mkdir -p build/logs
   - mysql -e 'create database `test-jam-freezable`;'
   - mysql --default-character-set=utf8 test-jam-freezable < tests/test_data/structure.sql
+
+script:
+  - phpunit --coverage-clover build/logs/clover.xml
 
 after_script:
   - wget https://scrutinizer-ci.com/ocular.phar
